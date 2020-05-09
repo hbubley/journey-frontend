@@ -182,3 +182,10 @@ code {
     }
   }
 }
+.sequence-container{
+  @include centered-flex-display();
+  width: 90vw;
+  height: 90vh;
+  background: rgba(0, 0 , 0, 0.9);
+  border-radius: 5px;
+}
