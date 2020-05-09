@@ -1,20 +1,21 @@
 import React from "react";
 import WelcomeInitialContent from "./WelcomeInitialContent";
+import useToggleState from '../../../hooks/useToggleState'
 import Login from "./Login";
 import Register from "./Register";
-import { Route } from "react-router-dom";
 
 export default function WelcomeDisplay() {
-  let isLoggingIn = false;
-  let isRegistering = false;
+  const [isLoggingIn, toggleIsLoggingIn] = useToggleState(false)
+  const [isRegistering, toggleIsRegistering] = useToggleState(false)
+
   return (
-    <div className="welcome-container">
+    <div className={"welcome-container"}>
       {isLoggingIn ? (
         <Login />
       ) : isRegistering ? (
         <Register />
       ) : (
-        <WelcomeInitialContent />
+        <WelcomeInitialContent toggleIsLoggingIn={toggleIsLoggingIn} toggleIsRegistering={toggleIsRegistering} />
       )}
     </div>
   );

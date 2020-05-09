@@ -25,7 +25,25 @@ $hover-font-color: rgba(159, 210, 222, 0.9);
    -ms-animation: fadein 2s ease-in;
     -o-animation: fadein 2s ease-in;
        animation: fadein 2s ease-in;
+}
 
+@mixin fade-out{
+  @keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  -webkit-animation: fadeout 2s ease-in;
+  -moz-animation: fadeout 2s ease-in;
+   -ms-animation: fadeout 2s ease-in;
+    -o-animation: fadeout 2s ease-in;
+       animation: fadeout 2s ease-in;
+}
+
+.fadeOut{
+  @include fade-out();
+}
+.fadeIn{
+  @include fade-in()
 }
 
 @keyframes parallax_bg {
@@ -86,6 +104,10 @@ code {
         transition: color, 1s;
         text-shadow: 4px 4px #888888;
       }
+    }
+    .login-container{
+      @include main-text();
+      @include fade-in();
     }
   }  
 }
