@@ -7,9 +7,7 @@ import { Route } from 'react-router-dom'
 export default function WelcomeDisplay() {
     return (
         <div className="welcome-container">
-          <Route path='/'>
-            <WelcomeInitialContent />
-          </Route>
+          <WelcomeInitialContent />
         </div>
     )
 }
