@@ -147,7 +147,7 @@ code {
       }
     }
   }  
-  .login-container{
+  .login-container, .register-container{
     @include fade-in();
     @include desktop-welcome-size();
     @include centered-flex-display(); 
