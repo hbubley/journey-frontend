@@ -1,20 +1,21 @@
-import React from 'react';
-import WelcomeDisplay from './components/LandingPage/Auth/WelcomeDisplay';
-import StepState from './context/user-steps/StepState'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import React from "react";
+import WelcomeDisplay from "./components/LandingPage/Auth/WelcomeDisplay";
+import About from "./components/LandingPage/About";
+import StepState from "./context/user-steps/StepState";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-  <StepState>
-  <Router>
-    <div className="App">
-      <Switch>
-        <Route  />
-        <Route />
-      </Switch>
-    </div>
-  </Router>
-  </StepState>
+    <StepState>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={WelcomeDisplay} />
+            <Route exact path="/about" component={About} />
+          </Switch>
+        </div>
+      </Router>
+    </StepState>
   );
 }
 

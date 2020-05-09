@@ -13,28 +13,28 @@ const StepState = props => {
      //Fakies for now ;)
      steps: [
         {
-            "_id": "5eb5d9412dbbe1416adfa17b",
-            "good": "Getting a backend setup",
-            "proud": "Of this step example",
-            "user": "5eb5d8732dbbe1416adfa17a",
-            "date": "2020-05-08T22:12:17.581Z",
-            "__v": 0
+            _id: "5eb5d9412dbbe1416adfa17b",
+            good: "Getting a backend setup",
+            proud: "Of this step example",
+            user: "5eb5d8732dbbe1416adfa17a",
+            date: "2020-05-08T22:12:17.581Z",
+            __v: 0
         },
         {
-            "_id": "5eb5d9412dbbe1416adfa17b",
-            "good": "Hopefully not having a broken back end",
-            "proud": "We shall seee",
-            "user": "5eb5d8732dbbe1416adfa17a",
-            "date": "2020-05-08T22:12:17.581Z",
-            "__v": 0
+            _id: "5eb5d9412dbbe1416adfa17b",
+            good: "Hopefully not having a broken back end",
+            proud: "We shall seee",
+            user: "5eb5d8732dbbe1416adfa17a",
+            date: "2020-05-08T22:12:17.581Z",
+            __v: 0
         },
         {
-            "_id": "5eb5d9412dbbe1416adfa17b",
-            "good": "Pizza",
-            "proud": "not killing dog for eating pizza",
-            "user": "5eb5d8732dbbe1416adfa17a",
-            "date": "2020-05-08T22:12:17.581Z",
-            "__v": 0
+            _id: "5eb5d9412dbbe1416adfa17b",
+            good: "Pizza",
+            proud: "not killing dog for eating pizza",
+            user: "5eb5d8732dbbe1416adfa17a",
+            date: "2020-05-08T22:12:17.581Z",
+            __v: 0
         }
      ]
  }
@@ -52,6 +52,7 @@ const StepState = props => {
             value={{
                 steps: state.steps
             }}
+            {props.children}
         </StepContext.Provider>
     )
 };
