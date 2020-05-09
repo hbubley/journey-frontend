@@ -1,4 +1,6 @@
-$main-font-color: rgba(0, 0 , 0, 0.7);
+$secondary-font-color: rgba(0, 0 , 0, 0.7);
+$main-font-color: rgb(255, 255, 220);
+$hover-font-color: #9FD2DE;
 
 @mixin centered-flex-display{
   display: flex;
@@ -9,6 +11,21 @@ $main-font-color: rgba(0, 0 , 0, 0.7);
 @mixin main-text{
   color: $main-font-color;
   font-family: 'Nanum Brush Script', cursive;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px #888888;
+}
+
+@mixin fade-in{
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+   -ms-animation: fadein 2s;
+    -o-animation: fadein 2s;
+       animation: fadein 2s;
+
 }
 
 @keyframes parallax_bg {
@@ -39,6 +56,7 @@ code {
 
 .welcome-container{
   @include centered-flex-display();
+  @include fade-in();
   flex-direction: column;
   min-width: 600px;
   min-height: 600px;
@@ -47,6 +65,23 @@ code {
   background-repeat: no-repeat;
   h1{
     @include main-text();
-    font-size: 100px;
+    font-size: 110px;
+    margin: 0;
+    padding: 0;
+    
+  }
+  button{
+    @include main-text();
+    font-size: 85px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    &:hover{
+      color: $hover-font-color;
+      cursor: pointer;
+      transition: color, 1s;
+      text-shadow: 4px 4px #888888;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import WelcomeDisplay from './components/UserAuthenticate/WelcomeDisplay';
+import WelcomeDisplay from './components/LandingPage/Auth/WelcomeDisplay';
 
 function App() {
   return (
