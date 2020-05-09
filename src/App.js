@@ -1,13 +1,18 @@
 import React from 'react';
 import WelcomeDisplay from './components/LandingPage/Auth/WelcomeDisplay';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 function App() {
   return (
+  <Router>
     <div className="App">
-      <header className="App-header">
-        <WelcomeDisplay />
-      </header>
+      <Switch>
+        <Route>
+          <WelcomeDisplay />
+        </Route>
+      </Switch>
     </div>
+  </Router>
   );
 }
 

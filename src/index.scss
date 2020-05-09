@@ -1,6 +1,6 @@
 $secondary-font-color: rgba(0, 0 , 0, 0.7);
-$main-font-color: rgb(255, 255, 220);
-$hover-font-color: #9FD2DE;
+$main-font-color: rgba(255, 255, 220, 0.9);
+$hover-font-color: rgba(159, 210, 222, 0.9);
 
 @mixin centered-flex-display{
   display: flex;
@@ -20,11 +20,11 @@ $hover-font-color: #9FD2DE;
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-  -webkit-animation: fadein 2s;
-  -moz-animation: fadein 2s;
-   -ms-animation: fadein 2s;
-    -o-animation: fadein 2s;
-       animation: fadein 2s;
+  -webkit-animation: fadein 2s ease-in;
+  -moz-animation: fadein 2s ease-in;
+   -ms-animation: fadein 2s ease-in;
+    -o-animation: fadein 2s ease-in;
+       animation: fadein 2s ease-in;
 
 }
 
@@ -53,35 +53,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 .welcome-container{
   @include centered-flex-display();
-  @include fade-in();
-  flex-direction: column;
   min-width: 600px;
   min-height: 600px;
   background-image: url("https://res.cloudinary.com/dum4u7sro/image/upload/v1588986601/icons_Journey_App_-_Desktop_hw04lx.png");
   background-size: contain;
   background-repeat: no-repeat;
-  h1{
-    @include main-text();
-    font-size: 110px;
-    margin: 0;
-    padding: 0;
-    
-  }
-  button{
-    @include main-text();
-    font-size: 85px;
-    padding: 0;
-    margin: 0;
-    background: none;
-    border: none;
-    &:hover{
-      color: $hover-font-color;
-      cursor: pointer;
-      transition: color, 1s;
-      text-shadow: 4px 4px #888888;
+  .welcome-initial-content{
+    @include centered-flex-display();
+    @include fade-in();
+    flex-direction: column;
+    min-width: 600px;
+    min-height: 600px;
+    h1{
+      @include main-text();
+      font-size: 110px;
+      margin: 0;
+      padding: 0;
+      
     }
-  }
+    button{
+      @include main-text();
+      font-size: 85px;
+      padding: 0;
+      margin: 0;
+      background: none;
+      border: none;
+      &:hover{
+        color: $hover-font-color;
+        cursor: pointer;
+        transition: color, 1s;
+        text-shadow: 4px 4px #888888;
+      }
+    }
+  }  
 }
