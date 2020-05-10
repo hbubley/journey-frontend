@@ -1,0 +1,34 @@
+{
+    "breathe": {
+        "one_a": "Let's take a moment to breathe",
+        "one_b": "Breathe with us, follow the motion below",
+        "two_a": "Remember, like the weather, feelings change and that is okay",
+        "two_b": "Let everything today carried with it bubble up...",
+        "two_c": "...and then let it go"
+    },
+    "input_1": {
+        "question": "In one word, are you feeling in this moment?",
+        "placeholder": "happy, sad, scared, anxious, grateful, excited, proud?",
+        "input_key": "feeling_now"
+    } , 
+    "input_2": {
+        "question": "Beautiful work, did any thoughts come up?",
+        "placeholder": "This can be anything, let whatever comes to mind free itself here...",
+        "input_key": "thoughts"
+    },
+    "input_3": {
+        "question": "Now, how about something good that happened today?",
+        "placeholder": "Think really hard, sometimes you really have to look for the good...",
+        "input_key": "good_thing"
+    },  
+    "input_4": {
+        "question": "What is something that you are proud of yourself for today?",
+        "placeholder": "Even if it fely like a very small thing, we are so proud of you for it...",
+        "input_key": "proud_moment"
+    },  
+    "input_5": {
+        "question": "This space is completely yours, fill it however you choose",
+        "placeholder": "There is no right or wrong way, write whatever you would like...",
+        "input_key": "freespace"
+    }
+}
