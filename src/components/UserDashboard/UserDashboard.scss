@@ -7,7 +7,17 @@ $main-background-color: #EAEEEE;
   justify-content: center;
   align-items: center;
 }
-
+@mixin fade-in{
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    -webkit-animation: fadein 2s ease-in;
+    -moz-animation: fadein 2s ease-in;
+     -ms-animation: fadein 2s ease-in;
+      -o-animation: fadein 2s ease-in;
+         animation: fadein 2s ease-in;
+  }
 @mixin main-text{
   color: $main-font-color;
   font-family: 'Nanum Brush Script', cursive;
@@ -29,6 +39,7 @@ $main-background-color: #EAEEEE;
     'start start stepcount'
     'start start allstepslink';
     .memory-container{
+        @include fade-in();
         grid-area: memory;
         background: url("https://res.cloudinary.com/dum4u7sro/image/upload/v1589074172/icons_Journey_App_-_Desktop_6_ginfb5.png");
         width: 400px;
@@ -45,6 +56,7 @@ $main-background-color: #EAEEEE;
         }
     }
     .step-count-container{
+        @include fade-in();
         grid-area: stepcount;
         background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589077053/Copy_of_Copy_of_icons_Journey_App_-_Desktop_tvbgeh.png');
         background-position: center;
@@ -65,6 +77,7 @@ $main-background-color: #EAEEEE;
         }
     }
     .all-steps-link{
+        @include fade-in();
         grid-area: allstepslink;
         @include centered-flex-display();
         @include main-text();
@@ -74,6 +87,7 @@ $main-background-color: #EAEEEE;
         background-repeat: no-repeat;
         width: 400px;
         h1{
+            @include fade-in();
             @include main-text();
             font-size: 37px;
             width: 400px;
@@ -88,14 +102,16 @@ $main-background-color: #EAEEEE;
         }
     }
     .dash-header{
+        @include fade-in();
         grid-area: welcome;
         h1, h2{
         @include main-text();
         color: $hover-font-color;;
-        font-size: 45px;
+        font-size: 49px;
         }
     }
     .start-link{
+        @include fade-in();
         justify-self: stretch;
         grid-area: start;
         background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589121983/icons_Journey_App_-_Desktop_7_y3qyrj.png');
