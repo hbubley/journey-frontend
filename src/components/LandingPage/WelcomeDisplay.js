@@ -1,6 +1,6 @@
 import React from "react";
 import WelcomeInitialContent from "./WelcomeInitialContent";
-import useToggleState from '../../../hooks/useToggleState'
+import useToggleState from '../../hooks/useToggleState'
 import Login from "./Login";
 import Register from "./Register";
 
