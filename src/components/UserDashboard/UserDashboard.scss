@@ -16,11 +16,20 @@ $main-background-color: #EAEEEE;
 }
 
 .dashboard-container{
+    justify-items: center;
+    padding: 10px;
+    display: grid;
     width: 90vw;
     height: 90vh;
-    background: rgba(234, 238, 238, 0.75);
+    background: rgba(234, 238, 238, 0.9);
     border-radius: 20px;
+    grid-template-areas: 
+    'welcome welcome memory'
+    'start start memory'
+    'start start stepcount'
+    'start start allstepslink';
     .memory-container{
+        grid-area: memory;
         background: url("https://res.cloudinary.com/dum4u7sro/image/upload/v1589074172/icons_Journey_App_-_Desktop_6_ginfb5.png");
         width: 400px;
         height: 400px;
@@ -36,6 +45,7 @@ $main-background-color: #EAEEEE;
         }
     }
     .step-count-container{
+        grid-area: stepcount;
         background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589077053/Copy_of_Copy_of_icons_Journey_App_-_Desktop_tvbgeh.png');
         background-position: center;
         background-size: contain;
@@ -55,6 +65,7 @@ $main-background-color: #EAEEEE;
         }
     }
     .all-steps-link{
+        grid-area: allstepslink;
         @include centered-flex-display();
         @include main-text();
         background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589080725/Copy_of_Copy_of_icons_Journey_App_-_Desktop_1_quqzc8.png');
@@ -68,7 +79,45 @@ $main-background-color: #EAEEEE;
             width: 400px;
             text-align: center;
             color: rgb(255, 243, 234);
+            &:hover{
+                color: $secondary-font-color;
+                cursor: pointer;
+                transition: color, 1s;
+                text-shadow: 4px 4px #888888;
+              }
         }
     }
+    .dash-header{
+        grid-area: welcome;
+        h1, h2{
+        @include main-text();
+        color: $hover-font-color;;
+        font-size: 45px;
+        }
+    }
+    .start-link{
+        justify-self: stretch;
+        grid-area: start;
+        background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589121983/icons_Journey_App_-_Desktop_7_y3qyrj.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include centered-flex-display();
+        height: 500px;
+        margin-top: 20px;
+        h1{
+            @include main-text();
+            font-size: 70px;
+            text-align: center;
+            color: rgb(255, 243, 234);
+            &:hover{
+                color: $secondary-font-color;
+                cursor: pointer;
+                transition: color, 1s;
+                text-shadow: 4px 4px #888888;
+              }
+        }
+    }
+    
 
 }

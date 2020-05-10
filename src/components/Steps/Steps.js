@@ -5,8 +5,12 @@ export default function Steps() {
   const { steps } = stepContext;
   return (
     <div>
-      {steps.map((step) => (
+      {steps.map((step) => 
+      (
+        <>
+        <h1>{step.date}</h1>
         <h3>{step.good}</h3>
+        </>
       ))}
     </div>
   );
