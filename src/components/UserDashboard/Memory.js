@@ -12,8 +12,8 @@ export default function Memory() {
         return Math.floor(Math.random() * (max - min + 1)) + min; 
     }  
     let rn = randomNumber(0, steps.length)
-    if(steps[rn].proud){
-        randomProud = steps[rn].proud
+    if(steps[rn].proud_moment){
+        randomProud = steps[rn].proud_moment
     }
     return (
         <div className='memory-container'>

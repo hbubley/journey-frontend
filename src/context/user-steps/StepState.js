@@ -14,24 +14,30 @@ const StepState = props => {
      steps: [
         {
             _id: 1,
-            good: "Getting a backend setup",
-            proud: "Of this step example",
+            feeling_now: "Nothing, cats don't feel",
+            thoughts: "does that mouse I killed have a family",
+            good_thing: "Killing that mouse",
+            proud_moment: "Killin' that mouse real good",
             user: "5eb5d8732dbbe1416adfa17a",
             date: "2020-05-08T22:12:17.581Z",
             __v: 0
         },
         {
-            _id: 2,
-            good: "Hopefully not having a broken back end",
-            proud: "We shall seee",
+            _id: 1,
+            feeling_now: "cool, like a cat",
+            thoughts: "Why do dogs exist",
+            good_thing: "Found some cheese",
+            proud_moment: "Scratched my human's eye ball",
             user: "5eb5d8732dbbe1416adfa17a",
             date: "2020-05-08T22:12:17.581Z",
             __v: 0
         },
         {
-            _id: 3,
-            good: "Pizza",
-            proud: "not killing dog for eating pizza",
+            _id: 1,
+            feeling_now: "ameowzing",
+            thoughts: "Why do I exist",
+            good_thing: "Destroyed v expensive cat toy",
+            proud_moment: "hit dog's snoot",
             user: "5eb5d8732dbbe1416adfa17a",
             date: "2020-05-08T22:12:17.581Z",
             __v: 0
