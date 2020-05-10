@@ -16,7 +16,7 @@ export default function Login() {
         name="password"
         placeholder="Password"
       />
-      <button className="btn btn-lg btn-primary btn-block" type="submit">
+      <button type="submit">
         Login
       </button>
     </form>

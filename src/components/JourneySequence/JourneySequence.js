@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Breathe from './Breathe'
+import JourneyButtons from './JourneyButtons.js'
 import prompts from './prompts.json'
 import './Sequence.scss'
 
@@ -12,6 +13,7 @@ export default function JourneySequence() {
     return (
         <div className="sequence-container">
            <Breathe prompts={prompts.breathe}/>
+           <JourneyButtons />
         </div>
     )
 }

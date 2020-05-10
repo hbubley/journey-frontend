@@ -22,7 +22,7 @@ export default function Register() {
         name="password"
         placeholder="Password"
       />
-      <button className="btn btn-lg btn-primary btn-block" type="submit">
+      <button type="submit">
         Register
       </button>
     </form>
