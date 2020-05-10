@@ -12,8 +12,9 @@ $main-background-color: #EAEEEE;
   color: $main-font-color;
   font-family: 'Nanum Brush Script', cursive;
   letter-spacing: 3px;
-  text-shadow: 3px 3px #888888;
+  text-shadow: 2px 2px #4d4c4c;
 }
+
 @mixin desktop-welcome-size{
   min-width: 600px;
   min-height: 600px;
@@ -188,10 +189,4 @@ code {
   height: 90vh;
   background: rgba(0, 0 , 0, 0.9);
   border-radius: 5px;
-}
-.dashboard-container{
-  width: 90vw;
-  height: 90vh;
-  background: rgba(234, 238, 238, 0.75);
-  border-radius: 20px;
 }

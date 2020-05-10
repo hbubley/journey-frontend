@@ -1,0 +1,74 @@
+$secondary-font-color: rgba(0, 0 , 0, 0.7);
+$main-font-color: rgba(255, 255, 220, 0.9);
+$hover-font-color: rgba(159, 210, 222, 0.8);
+$main-background-color: #EAEEEE;
+@mixin centered-flex-display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin main-text{
+  color: $main-font-color;
+  font-family: 'Nanum Brush Script', cursive;
+  letter-spacing: 3px;
+  text-shadow: 2.2px 2.2px #3d3d3d;
+}
+
+.dashboard-container{
+    width: 90vw;
+    height: 90vh;
+    background: rgba(234, 238, 238, 0.75);
+    border-radius: 20px;
+    .memory-container{
+        background: url("https://res.cloudinary.com/dum4u7sro/image/upload/v1589074172/icons_Journey_App_-_Desktop_6_ginfb5.png");
+        width: 400px;
+        height: 400px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include centered-flex-display();
+        h1{
+            @include main-text();
+            font-size: 33px;
+            width: 300px;
+            text-align: center;
+            color: rgb(255, 243, 234);
+        }
+    }
+    .step-count-container{
+        background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589077053/Copy_of_Copy_of_icons_Journey_App_-_Desktop_tvbgeh.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include centered-flex-display();
+        height: 200px;
+        h1{
+            @include main-text();
+            font-size: 37px;
+            width: 400px;
+            text-align: center;
+            color: rgb(255, 243, 234);
+        }
+        span{
+            color: $hover-font-color;
+            font-size: 46px;
+        }
+    }
+    .all-steps-link{
+        @include centered-flex-display();
+        @include main-text();
+        background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589080725/Copy_of_Copy_of_icons_Journey_App_-_Desktop_1_quqzc8.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 400px;
+        h1{
+            @include main-text();
+            font-size: 37px;
+            width: 400px;
+            text-align: center;
+            color: rgb(255, 243, 234);
+        }
+    }
+
+}
