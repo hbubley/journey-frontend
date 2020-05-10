@@ -1,7 +1,7 @@
 $secondary-font-color: rgba(0, 0 , 0, 0.7);
 $main-font-color: rgba(255, 255, 220, 0.9);
 $hover-font-color: rgba(159, 210, 222, 0.8);
-$main-background-color: #EAEEEE;
+$main-background-color: rgb(234, 238, 238);
 @mixin centered-flex-display{
   display: flex;
   justify-content: center;
@@ -62,36 +62,6 @@ $main-background-color: #EAEEEE;
   100% {
     background-position-x: 100%, 100%, 0%, 0%, 90%;
   }
-}
-
-@keyframes breathing {
-  0% {
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  25% {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-  }
-
-  60% {
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  100% {
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-}
-
-.breathing-test{
-  animation: breathing 7s linear 4s infinite normal;
 }
 
 body{
@@ -182,11 +152,4 @@ code {
       }
     }
   }
-}
-.sequence-container{
-  @include centered-flex-display();
-  width: 90vw;
-  height: 90vh;
-  background: rgba(0, 0 , 0, 0.9);
-  border-radius: 5px;
 }
