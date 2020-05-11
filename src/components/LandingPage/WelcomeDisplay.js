@@ -10,9 +10,12 @@ export default function WelcomeDisplay() {
 
   return (
     <div className={"welcome-container"}>
-        {/* <WelcomeInitialContent />
-        <Login /> */}
-        <Register />
+      {isLoggingIn ? (
+        <Login />
+      ) : isRegistering ? (
+        <Register toggleIsLoggingIn={toggleIsLoggingIn} isRegistering={toggleIsRegistering}/>
+      ) : (
+        <WelcomeInitialContent toggleIsLoggingIn={toggleIsLoggingIn} toggleIsRegistering={toggleIsRegistering} />
       )}
     </div>
   );

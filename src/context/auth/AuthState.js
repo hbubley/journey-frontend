@@ -34,7 +34,7 @@ const AuthState = (props) => {
     };
     try {
       const res = await axios.post(
-        "https://git.heroku.com/intense-basin-33436.git/api/users",
+        "http://intense-basin-33436.herokuapp.com/api/users",
         formData,
         config
       );
@@ -43,9 +43,10 @@ const AuthState = (props) => {
         payload: res.data,
       });
     } catch (err) {
+        console.log('error', err)
       dispatch({
         type: REGISTER_FAIL,
-        payload: err.response.data.msg
+        // payload: err.response.data.msg
       });
     }
   };

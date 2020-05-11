@@ -1,8 +1,9 @@
 import React , {useState, useContext} from "react";
 import AuthContext from '../../context/auth/authContext'
+import {useHistory} from 'react-router-dom'
 import { SET_ALERT } from "../../context/types";
 
-export default function Register() {
+export default function Register({toggleIsLoggingIn}) {
   const authContext = useContext(AuthContext);
   const {register} = authContext
   const [user, setUser] = useState({
@@ -16,9 +17,7 @@ export default function Register() {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log("SUBMIT")
     if (name === '' || email === '' || password === ''){
-      console.log("BROKEN")
     }
     else{
       register({
@@ -26,6 +25,8 @@ export default function Register() {
         email,
         password
       })
+    
+      toggleIsLoggingIn();
     }
   }
 

@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import uuid from 'uuid'
 import AlertContext from './alertContext'
 import alertReducer from './alertReducer'
 import {
@@ -11,20 +12,19 @@ const AlertState = props => {
     const [state, dispatch] = useReducer(alertReducer, initialState);
  
     //Set alert
-    const setAlert(msg, type) => {
+    const setAlert(msg, type, timeout = 5000) => {
+        const id = uuid.v4();
         dispatch({
-            payload: {msg, type}
+            payload: {msg, type, id }
         })
+
+        setTimeout(() => sipatch({ type: REMOVE_ALERT, payload: id }), timeout)
     }
 
     return (
         <AlertContext.Provider
             value={{
-                token: state.token,
-                isAuthenticated: state.isAuthenticated,
-                loading: state.loading,
-                user: state.user,
-                error: state.error,
+               alerts: state
             }}
         >
             {props.children}
