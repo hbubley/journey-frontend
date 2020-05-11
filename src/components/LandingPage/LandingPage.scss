@@ -1,0 +1,138 @@
+$secondary-font-color: rgba(0, 0 , 0, 0.7);
+$main-font-color: rgba(255, 255, 220, 0.9);
+$hover-font-color: rgba(159, 210, 222, 0.8);
+$main-background-color: rgb(234, 238, 238);
+@mixin centered-flex-display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin main-text{
+  color: $main-font-color;
+  font-family: 'Nanum Brush Script', cursive;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px #4d4c4c;
+}
+
+@mixin desktop-welcome-size{
+  min-width: 600px;
+  min-height: 600px;
+}
+@mixin input-style-desktop{
+  font-family: 'Nanum Brush Script', cursive;
+  letter-spacing: 3px;
+  background: $main-background-color;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+@mixin fade-in{
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  -webkit-animation: fadein 2s ease-in;
+  -moz-animation: fadein 2s ease-in;
+   -ms-animation: fadein 2s ease-in;
+    -o-animation: fadein 2s ease-in;
+       animation: fadein 2s ease-in;
+}
+
+@mixin fade-out{
+  @keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  -webkit-animation: fadeout 2s ease-in;
+  -moz-animation: fadeout 2s ease-in;
+   -ms-animation: fadeout 2s ease-in;
+    -o-animation: fadeout 2s ease-in;
+       animation: fadeout 2s ease-in;
+}
+
+.fadeOut{
+  @include fade-out();
+}
+.fadeIn{
+  @include fade-in()
+}
+
+@keyframes parallax_bg {
+  100% {
+    background-position-x: 100%, 100%, 0%, 0%, 90%;
+  }
+}
+
+
+.welcome-container{
+    @include centered-flex-display();
+    min-width: 600px;
+    min-height: 600px;
+    background-image: url("https://res.cloudinary.com/dum4u7sro/image/upload/v1588986601/icons_Journey_App_-_Desktop_hw04lx.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    .welcome-initial-content{
+      @include centered-flex-display();
+      @include fade-in();
+      flex-direction: column;
+      min-width: 600px;
+      min-height: 600px;
+      h1{
+        @include main-text();
+        font-size: 110px;
+        margin: 0;
+        padding: 0;
+        
+      }
+      button{
+        @include main-text();
+        font-size: 85px;
+        padding: 0;
+        margin: 0;
+        background: none;
+        border: none;
+        &:hover{
+          color: $hover-font-color;
+          cursor: pointer;
+          transition: color, 1s;
+          text-shadow: 4px 4px #888888;
+        }
+      }
+    }  
+    .login-container, .register-container{
+      @include fade-in();
+      @include desktop-welcome-size();
+      @include centered-flex-display(); 
+      flex-direction: column;
+      h1{
+        @include main-text();
+        font-size: 40px;
+        margin-bottom: 15px;
+        padding: 0;
+      }
+      input{
+        @include input-style-desktop();
+        @include main-text();
+        font-size: 35px;
+        text-shadow: none;
+      }
+      button{
+        margin-top: 15px;
+        font-size: 50px;
+        @include main-text();
+        background: rgba(255, 238, 181, 0.52);
+        border-radius: 5px;
+        border: 0px;
+        box-shadow: 0 0 5px 1px #888888;
+        &:hover{
+          color: $secondary-font-color;
+          cursor: pointer;
+          transition: color, 2s;
+          text-shadow: 4px 4px #888888;
+          box-shadow: 0 0 5px 2px #888888;
+        }
+      }
+    }
+  }
+  

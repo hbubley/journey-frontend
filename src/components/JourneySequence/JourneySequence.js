@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Breathe from './Breathe'
+import Input from './Input'
 import prompts from './prompts.json'
 import './Sequence.scss'
 
@@ -8,7 +9,8 @@ export default function JourneySequence() {
   
     return (
         <div className="sequence-container">
-           <Breathe prompts={prompts.breathe}/>
+           {/* <Breathe prompts={prompts.breathe}/> */}
+           <Input prompts={prompts.input_1} />
         </div>
     )
 }
