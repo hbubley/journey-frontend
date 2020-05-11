@@ -1,5 +1,6 @@
 import React from "react";
 import WelcomeDisplay from "./components/LandingPage/WelcomeDisplay";
+import Alerts from './components/LandingPage/Alerts'
 import About from "./components/LandingPage/About";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
 import JourneySequence from "./components/JourneySequence/JourneySequence";
