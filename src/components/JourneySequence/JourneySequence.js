@@ -3,13 +3,13 @@ import Breathe from "./Breathe";
 import Input from "./Input";
 import prompts from "./prompts.json";
 import StepContext from "../../context/user-steps/stepContext";
-import Submit from "./Submit"
+import Submit from "./Submit";
 import "./Sequence.scss";
 
 export default function JourneySequence() {
-  const stepContext = useContext(StepContext);
+  const { addStep } = useContext(StepContext);
   const [sequenceIndex, setSequenceIndex] = useState(0);
-  const [step, setStep] = useState({
+  const [state, setState] = useState({
     feeling_now: "",
     thoughts: "",
     good_thing: "",
@@ -20,17 +20,24 @@ export default function JourneySequence() {
   //   const { feeling_now, thoughts, good_thing, proud_moment, freespace } = step;
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setStep({
-      [name]: value,
+    const value = event.target.value;
+    setState({
+      ...state,
+      [event.target.name]: value,
     });
-    
-    console.log(step)
+    console.log(state);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const { feeling_now, thoughts, good_thing, proud_moment, freespace } = step;
+    addStep(state);
+    setState({
+      feeling_now: "",
+      thoughts: "",
+      good_thing: "",
+      proud_moment: "",
+      freespace: "",
+    });
   };
 
   const _next = () => {
@@ -42,7 +49,13 @@ export default function JourneySequence() {
 
     switch (sequenceIndex) {
       case 0:
-        return (renderComponent = <Input prompts={prompts.input_1} handleChange={handleChange}value={step.feeling_now}/>);
+        return (renderComponent = (
+          <Input
+            prompts={prompts.input_1}
+            handleChange={handleChange}
+            value={state.feeling_now}
+          />
+        ));
       case 1:
         return (renderComponent = (
           <Breathe
@@ -51,7 +64,13 @@ export default function JourneySequence() {
           />
         ));
       case 2:
-        return (renderComponent = <Input prompts={prompts.input_2} handleChange={handleChange} value={step.thoughts}/>);
+        return (renderComponent = (
+          <Input
+            prompts={prompts.input_2}
+            handleChange={handleChange}
+            value={state.thoughts}
+          />
+        ));
       case 3:
         return (renderComponent = (
           <Breathe
@@ -60,14 +79,38 @@ export default function JourneySequence() {
           />
         ));
       case 4:
-        return (renderComponent = <Input prompts={prompts.input_3} handleChange={handleChange} value={step.good_thing}/>);
+        return (renderComponent = (
+          <Input
+            prompts={prompts.input_3}
+            handleChange={handleChange}
+            value={state.good_thing}
+          />
+        ));
       case 5:
-        return (renderComponent = <Input prompts={prompts.input_4} handleChange={handleChange} value={step.proud_moment} />);
+        return (renderComponent = (
+          <Input
+            prompts={prompts.input_4}
+            handleChange={handleChange}
+            value={state.proud_moment}
+          />
+        ));
       case 6:
-        return (renderComponent = <Input prompts={prompts.input_5} handleChange={handleChange} value={step.freespace} />);
+        return (renderComponent = (
+          <Input
+            prompts={prompts.input_5}
+            handleChange={handleChange}
+            value={state.freespace}
+          />
+        ));
       case 7:
-        return (renderComponent = <Submit prompts={prompts.input_5} handleChange={handleChange} value={step.freespace} />);
-      
+        return (renderComponent = (
+          <Submit
+            prompts={prompts.input_5}
+            handleChange={handleChange}
+            value={state.freespace}
+          />
+        ));
+
       default:
         return (renderComponent = null);
     }
@@ -75,10 +118,11 @@ export default function JourneySequence() {
 
   return (
     <div className="sequence-container">
-    <form>
-      {renderStep(sequenceIndex)}
-    </form>
-      <button onClick={_next}>Next</button>
+      <form onSubmit={handleSubmit}>{renderStep(sequenceIndex)}</form>
+      <div className="sequence-buttons">
+        <button hidden={sequenceIndex === 7} onClick={_next}>Next</button>
+        <button hidden={sequenceIndex < 7} onClick={handleSubmit}>Submit</button>
+      </div>
     </div>
   );
 }

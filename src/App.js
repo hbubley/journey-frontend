@@ -4,6 +4,7 @@ import About from "./components/LandingPage/About";
 import UserDashboard from './components/UserDashboard/UserDashboard'
 import JourneySequence from "./components/JourneySequence/JourneySequence";
 import StepState from "./context/user-steps/StepState";
+import AuthState from "./context/auth/AuthState";
 import Steps from "./components/UserSteps/UserSteps"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 

@@ -46,7 +46,9 @@ const StepState = props => {
  }
     const [state, dispatch] = useReducer(stepReducer, initialState);
     //Add step entry
-
+    const addStep = step => {
+       dispatch({ type: ADD_STEP, payload: step }) 
+    }
     //Delete step entry
 
     //set current entry
@@ -56,7 +58,8 @@ const StepState = props => {
     return (
         <StepContext.Provider
             value={{
-                steps: state.steps
+                steps: state.steps,
+                addStep
             }}
         >
             {props.children}

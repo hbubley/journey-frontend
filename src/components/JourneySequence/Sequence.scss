@@ -114,13 +114,34 @@ $main-background-color: rgb(234, 238, 238);
         width: 700px;
       }
     }
+    .sequence-buttons {
+      min-width: 60vw;
+      display: flex;
+      justify-content: flex-end; 
+      @include fade-in('5s');
+      button {
+        margin-top: 15px;
+        font-size: 50px;
+        @include main-text();
+        background: rgba(255, 238, 181, 0.52);
+        border-radius: 5px;
+        border: 0px;
+        box-shadow: 0 0 5px 1px #888888;
+        &:hover {
+          color: $secondary-font-color;
+          cursor: pointer;
+          transition: color, 2s;
+          text-shadow: 4px 4px #888888;
+          box-shadow: 0 0 5px 2px #888888;
+        }
+      }
+    }
   }
   .sequence-buttons {
-    min-width: 70vw;
+    min-width: 60vw;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    @include fade-in('30s');
+    justify-content: flex-end; 
+    @include fade-in('5s');
     button {
       margin-top: 15px;
       font-size: 50px;
