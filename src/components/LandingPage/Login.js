@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from 'react-router-dom'
 export default function Login() {
   return (
     <form className="login-container">
@@ -17,7 +17,9 @@ export default function Login() {
         placeholder="Password"
       />
       <button type="submit">
+        <Link to='/userdash'>
         Login
+       </Link>
       </button>
     </form>
   );

@@ -1,4 +1,5 @@
 import React from 'react'
+import './LandingPage.scss'
 
 
 export default function WelcomeInitialContent({toggleIsLoggingIn, toggleIsRegistering}) {

@@ -2,7 +2,7 @@ import React, {useState, useContext} from "react";
 
 
 
-export default function Input({ prompts }) {
+export default function Input({ prompts, handleChange, value }) {
 
   return (
     <div className="prompts">
@@ -13,8 +13,8 @@ export default function Input({ prompts }) {
           name={prompts.input_key}
           type="text"
           placeholder={prompts.placeholder}
-          value={prompts.input_key}
-          //   onChange=
+          value={value}
+          onChange={handleChange}
         />
       </div>
     </div>

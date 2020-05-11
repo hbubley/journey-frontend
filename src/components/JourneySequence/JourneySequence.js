@@ -3,6 +3,7 @@ import Breathe from "./Breathe";
 import Input from "./Input";
 import prompts from "./prompts.json";
 import StepContext from "../../context/user-steps/stepContext";
+import Submit from "./Submit"
 import "./Sequence.scss";
 
 export default function JourneySequence() {
@@ -23,6 +24,8 @@ export default function JourneySequence() {
     setStep({
       [name]: value,
     });
+    
+    console.log(step)
   };
 
   const handleSubmit = (event) => {
@@ -39,7 +42,7 @@ export default function JourneySequence() {
 
     switch (sequenceIndex) {
       case 0:
-        return (renderComponent = <Input prompts={prompts.input_1} />);
+        return (renderComponent = <Input prompts={prompts.input_1} handleChange={handleChange}value={step.feeling_now}/>);
       case 1:
         return (renderComponent = (
           <Breathe
@@ -48,7 +51,7 @@ export default function JourneySequence() {
           />
         ));
       case 2:
-        return (renderComponent = <Input prompts={prompts.input_2} />);
+        return (renderComponent = <Input prompts={prompts.input_2} handleChange={handleChange} value={step.thoughts}/>);
       case 3:
         return (renderComponent = (
           <Breathe
@@ -57,11 +60,14 @@ export default function JourneySequence() {
           />
         ));
       case 4:
-        return (renderComponent = <Input prompts={prompts.input_3} />);
+        return (renderComponent = <Input prompts={prompts.input_3} handleChange={handleChange} value={step.good_thing}/>);
       case 5:
-        return (renderComponent = <Input prompts={prompts.input_4} />);
+        return (renderComponent = <Input prompts={prompts.input_4} handleChange={handleChange} value={step.proud_moment} />);
       case 6:
-        return (renderComponent = <Input prompts={prompts.input_5} />);
+        return (renderComponent = <Input prompts={prompts.input_5} handleChange={handleChange} value={step.freespace} />);
+      case 7:
+        return (renderComponent = <Submit prompts={prompts.input_5} handleChange={handleChange} value={step.freespace} />);
+      
       default:
         return (renderComponent = null);
     }
@@ -69,7 +75,9 @@ export default function JourneySequence() {
 
   return (
     <div className="sequence-container">
+    <form>
       {renderStep(sequenceIndex)}
+    </form>
       <button onClick={_next}>Next</button>
     </div>
   );
