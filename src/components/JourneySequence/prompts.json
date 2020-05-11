@@ -2,11 +2,11 @@
     "breathe": {
         "one_a": "Let's take a moment to breathe",
         "one_b": "Breathe with us, follow the motion below",
-        "two_a": "Remember, like the weather, feelings change and that is okay",
+        "two_a": "Like the weather, feelings come and go",
         "two_b": "Let everything today carried with it bubble up...and then let it go"
     },
     "input_1": {
-        "question": "In one word, are you feeling in this moment?",
+        "question": "In one word, how are you feeling in this moment?",
         "placeholder": "happy, sad, scared, anxious, grateful, excited, proud?",
         "input_key": "feeling_now"
     } , 

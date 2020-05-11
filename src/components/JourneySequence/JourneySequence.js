@@ -34,10 +34,6 @@ export default function JourneySequence() {
     setSequenceIndex(sequenceIndex + 1);
   };
 
-  const _prev = () => {
-    setSequenceIndex(sequenceIndex - 1);
-  };
-
   const renderStep = (values) => {
     let renderComponent;
 
@@ -66,7 +62,6 @@ export default function JourneySequence() {
         return (renderComponent = <Input prompts={prompts.input_4} />);
       case 6:
         return (renderComponent = <Input prompts={prompts.input_5} />);
-
       default:
         return (renderComponent = null);
     }
@@ -75,6 +70,7 @@ export default function JourneySequence() {
   return (
     <div className="sequence-container">
       {renderStep(sequenceIndex)}
+      <button onClick={_next}>Next</button>
     </div>
   );
 }
