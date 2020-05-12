@@ -4,7 +4,7 @@ import AuthContext from "../../context/auth/authContext";
 import AlertContext from "../../context/alert/alertContext";
 import Alerts from "./Alerts";
 
-export default function Register({ toggleIsLoggingIn, props }) {
+export default function Register({ toggleIsRegistering }) {
   const authContext = useContext(AuthContext);
   const { register, error, clearErrors, isAuthenticated } = authContext;
   const alertContext = useContext(AlertContext);
@@ -46,7 +46,9 @@ export default function Register({ toggleIsLoggingIn, props }) {
 
   const { name, email, password } = user;
   return (
+    <>
     <form className="register-container" onSubmit={onSubmit}>
+    <button onClick={() => toggleIsRegistering()} className="back-button">Back</button>
       <h1>It's nice to meet you</h1>
       <Alerts />
       <input
@@ -70,7 +72,8 @@ export default function Register({ toggleIsLoggingIn, props }) {
         onChange={onChange}
         placeholder="Password"
       />
-      <input type="submit" />
+      <input className="btn" type="submit" />
     </form>
+  </>
   );
 }

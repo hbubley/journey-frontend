@@ -1,6 +1,5 @@
 import React from "react";
 import WelcomeDisplay from "./components/LandingPage/WelcomeDisplay";
-import Alerts from './components/LandingPage/Alerts'
 import About from "./components/LandingPage/About";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
 import JourneySequence from "./components/JourneySequence/JourneySequence";
@@ -9,7 +8,7 @@ import StepState from "./context/user-steps/StepState";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from './utils/setAuthToken'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 if(localStorage.token) {
   setAuthToken(localStorage.token);

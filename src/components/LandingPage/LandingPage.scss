@@ -32,11 +32,11 @@ $main-background-color: rgb(234, 238, 238);
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-  -webkit-animation: fadein 2s ease-in;
-  -moz-animation: fadein 2s ease-in;
-   -ms-animation: fadein 2s ease-in;
-    -o-animation: fadein 2s ease-in;
-       animation: fadein 2s ease-in;
+  -webkit-animation: fadein 1s ease-in;
+  -moz-animation: fadein 1s ease-in;
+   -ms-animation: fadein 1s ease-in;
+    -o-animation: fadein 1s ease-in;
+       animation: fadein 1s ease-in;
 }
 
 @mixin fade-out{
@@ -117,7 +117,7 @@ $main-background-color: rgb(234, 238, 238);
         font-size: 35px;
         text-shadow: none;
       }
-      button{
+      button, .button{
         margin-top: 15px;
         font-size: 50px;
         @include main-text();

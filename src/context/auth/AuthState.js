@@ -46,7 +46,6 @@ const AuthState = (props) => {
       },
     };
     try {
-      console.log("IN TRY FOR REGISTER")
       const res = await axios.post(
         "http://intense-basin-33436.herokuapp.com/api/users",
         formData,
@@ -65,7 +64,30 @@ const AuthState = (props) => {
     }
   };
   // Login User
-  const login = () => console.log("login");
+  const login = async (formData) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    try {
+      const res = await axios.post(
+        "http://intense-basin-33436.herokuapp.com/api/auth",
+        formData,
+        config
+      );
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data,
+      });
+      loadUser();
+    } catch (err) {
+      dispatch({
+        type: LOGIN_FAIL,
+        payload: err.response.data.msg,
+      });
+    }
+  };
   // Logout
   const logout = () => console.log("logout");
   // Clear Errors
