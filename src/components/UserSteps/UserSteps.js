@@ -1,9 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import StepContext from "../../context/user-steps/stepContext";
 import './Steps.scss'
 export default function Steps() {
   const stepContext = useContext(StepContext);
-  const { steps } = stepContext;
+  const { steps, getSteps, loading } = stepContext;
+
+  useEffect(() => {
+    getSteps()
+  })
+  if(steps !== null && !loading){
   return (
     <div className='steps-container'>
       {steps.map((step) => 
@@ -15,4 +20,5 @@ export default function Steps() {
       ))}
     </div>
   );
+  }else{return <h1>Loading</h1>}
 }

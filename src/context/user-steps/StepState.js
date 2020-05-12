@@ -3,6 +3,8 @@ import axios from 'axios'
 import StepContext from "./stepContext";
 import stepReducer from "./stepReducer";
 import {
+  GET_STEPS,
+  CLEAR_STEPS,
   ADD_STEP,
   DELETE_STEP,
   SET_CURRENT,
@@ -13,11 +15,30 @@ import {
 const StepState = (props) => {
   const initialState = {
     //Fakies for now ;)
+    allSteps: [],
+
     steps: [],
     current: null,
     error: null
   };
   const [state, dispatch] = useReducer(stepReducer, initialState);
+
+//Get all steps
+const getSteps = async () => {
+  try {
+    const res = await axios.get("http://intense-basin-33436.herokuapp.com/api/entries");
+    dispatch({
+      type: GET_STEPS,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: STEP_ERROR,
+      payload: err.response.msg,
+    });
+  }
+};
+
   //Add step entry
   const addStep = async (entry) => {
     const config = {
@@ -49,7 +70,8 @@ const StepState = (props) => {
       value={{
         steps: state.steps,
         addStep,
-        error: state.error
+        error: state.error,
+        getSteps
       }}
     >
       {props.children}

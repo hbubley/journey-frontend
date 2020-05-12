@@ -1,3 +1,5 @@
+export const GET_STEPS = 'GET_STEPS'
+export const CLEAR_STEPS = 'CLEAR_STEPS'
 export const ADD_STEP = 'ADD_STEP'
 export const DELETE_STEP = 'DELETE_STEP'
 export const STEP_ERROR = 'STEP_ERROR'
