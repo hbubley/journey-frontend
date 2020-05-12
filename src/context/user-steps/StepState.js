@@ -24,7 +24,7 @@ const StepState = (props) => {
 //Get all steps
 const getSteps = async () => {
   try {
-    const res = await axios.get("http://intense-basin-33436.herokuapp.com/api/entries");
+    const res = await axios.get("https://intense-basin-33436.herokuapp.com/api/entries");
     dispatch({
       type: GET_STEPS,
       payload: res.data
@@ -46,7 +46,7 @@ const getSteps = async () => {
       },
     };
     try {
-      const res = await axios.post("http://intense-basin-33436.herokuapp.com/api/entries", entry, config);
+      const res = await axios.post("https://intense-basin-33436.herokuapp.com/api/entries", entry, config);
       dispatch({
         type: ADD_STEP,
         payload: res.data

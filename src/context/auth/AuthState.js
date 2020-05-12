@@ -31,7 +31,7 @@ const AuthState = (props) => {
     }
     try {
       const res = await axios.get(
-        "http://intense-basin-33436.herokuapp.com/api/auth"
+        "https://intense-basin-33436.herokuapp.com/api/auth"
       );
       dispatch({ type: USER_LOADED, payload: res.data });
     } catch (err) {
@@ -47,7 +47,7 @@ const AuthState = (props) => {
     };
     try {
       const res = await axios.post(
-        "http://intense-basin-33436.herokuapp.com/api/users",
+        "https://intense-basin-33436.herokuapp.com/api/users",
         formData,
         config
       );
