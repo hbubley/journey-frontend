@@ -1,42 +1,50 @@
-import React , {useState, useContext} from "react";
-import AuthContext from '../../context/auth/authContext'
-import AlertContext from '../../context/alert/alertContext'
-import Alerts from './Alerts'
+import React, { useState, useContext, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+import AuthContext from "../../context/auth/authContext";
+import AlertContext from "../../context/alert/alertContext";
+import Alerts from "./Alerts";
 
-export default function Register({toggleIsLoggingIn}) {
+export default function Register({ toggleIsLoggingIn }) {
   const authContext = useContext(AuthContext);
+  const { register, error, clearErrors, isAuthenticated } = authContext;
   const alertContext = useContext(AlertContext);
-  const {register} = authContext;
-  const {setAlert} = alertContext;
+  const { setAlert } = alertContext;
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      // return <Redirect to="/userdash" />;
+    }
+    if (error === "This email is already in use") {
+      setAlert(error, "danger");
+      clearErrors();
+    }
+  }, [error, isAuthenticated]);
+
   const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: ''
-  })
+    name: "",
+    email: "",
+    password: "",
+  });
 
-  const onChange = e => setUser({...user, [e.target.name]: e.target.value})
-  console.log(user)
+  const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
+  console.log(user);
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    if (name === '' || email === '' || password === ''){
-      setAlert('Please enter all information', 'danger');
-    }
-    else if(password.length<4){
-      setAlert('Please make your password at least 4 characters', 'danger');
-    }
-    else{
+    if (name === "" || email === "" || password === "") {
+      setAlert("Please enter all information", "danger");
+    } else if (password.length < 4) {
+      setAlert("Please make your password at least 4 characters", "danger");
+    } else {
       register({
         name,
         email,
-        password
-      })
-    
-      toggleIsLoggingIn();
+        password,
+      });
     }
-  }
+  };
 
-  const {name, email, password} = user;
+  const { name, email, password } = user;
   return (
     <form className="register-container" onSubmit={onSubmit}>
       <h1>It's nice to meet you</h1>
@@ -62,7 +70,7 @@ export default function Register({toggleIsLoggingIn}) {
         onChange={onChange}
         placeholder="Password"
       />
-     <input type='submit' />
+      <input type="submit" />
     </form>
   );
 }

@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
+import setAuthToken from "../../utils/setAuthToken";
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -24,7 +25,20 @@ const AuthState = (props) => {
   };
   const [state, dispatch] = useReducer(authReducer, initialState);
   // Load User
-
+  const loadUser = async () => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+      console.log("IN LOAD USER CHEECKING FOR TOKEN")
+    }
+    try {
+      const res = await axios.get(
+        "http://intense-basin-33436.herokuapp.com/api/auth"
+      );
+      dispatch({ type: USER_LOADED, payload: res.data });
+    } catch (err) {
+      dispatch({ type: AUTH_ERROR });
+    }
+  };
   // Register User
   const register = async (formData) => {
     const config = {
@@ -33,6 +47,7 @@ const AuthState = (props) => {
       },
     };
     try {
+      console.log("IN TRY FOR REGISTER")
       const res = await axios.post(
         "http://intense-basin-33436.herokuapp.com/api/users",
         formData,
@@ -42,19 +57,22 @@ const AuthState = (props) => {
         type: REGISTER_SUCCESS,
         payload: res.data,
       });
+      console.log("RIGHT BEFORE LOAD USERß")
+      loadUser();
     } catch (err) {
-        console.log('error', err)
+      console.log("error", err);
       dispatch({
         type: REGISTER_FAIL,
-        payload: err.response.data.msg
+        payload: err.response.data.msg,
       });
     }
   };
   // Login User
-
+  const login = () => console.log("login");
   // Logout
-
+  const logout = () => console.log("logout");
   // Clear Errors
+  const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
 
   return (
     <AuthContext.Provider
@@ -64,7 +82,11 @@ const AuthState = (props) => {
         loading: state.loading,
         user: state.user,
         error: state.error,
-        register
+        register,
+        clearErrors,
+        loadUser,
+        login,
+        logout,
       }}
     >
       {props.children}
