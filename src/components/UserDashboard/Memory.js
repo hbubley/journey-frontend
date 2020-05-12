@@ -15,12 +15,12 @@ export default function Memory() {
         }  
         let rn = randomNumber(0, steps.length)
         
-        randomProud = steps[rn].proud_moment
+        randomProud = steps[rn]
     }
     return (
         <div className='memory-container'>
             {steps !== null && !loading ? (
-            <h1>Remember when you were so proud of yourself for...{randomProud}</h1>
+            <h1>Remember when you were so proud of yourself for...{randomProud.proud_moment}</h1>
             ) : <h1>Loading</h1>}
         </div>
         
