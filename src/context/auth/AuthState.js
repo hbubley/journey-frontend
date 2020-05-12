@@ -28,7 +28,6 @@ const AuthState = (props) => {
   const loadUser = async () => {
     if (localStorage.token) {
       setAuthToken(localStorage.token);
-      console.log("IN LOAD USER CHEECKING FOR TOKEN")
     }
     try {
       const res = await axios.get(
@@ -57,10 +56,8 @@ const AuthState = (props) => {
         type: REGISTER_SUCCESS,
         payload: res.data,
       });
-      console.log("RIGHT BEFORE LOAD USERß")
       loadUser();
     } catch (err) {
-      console.log("error", err);
       dispatch({
         type: REGISTER_FAIL,
         payload: err.response.data.msg,

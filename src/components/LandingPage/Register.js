@@ -1,18 +1,18 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 import AlertContext from "../../context/alert/alertContext";
 import Alerts from "./Alerts";
 
-export default function Register({ toggleIsLoggingIn }) {
+export default function Register({ toggleIsLoggingIn, props }) {
   const authContext = useContext(AuthContext);
   const { register, error, clearErrors, isAuthenticated } = authContext;
   const alertContext = useContext(AlertContext);
   const { setAlert } = alertContext;
-
+  let history = useHistory();
   useEffect(() => {
     if (isAuthenticated) {
-      // return <Redirect to="/userdash" />;
+      history.push("/userdash"); 
     }
     if (error === "This email is already in use") {
       setAlert(error, "danger");
