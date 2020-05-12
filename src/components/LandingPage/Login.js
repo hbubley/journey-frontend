@@ -64,7 +64,7 @@ export default function Login({toggleIsLoggingIn}) {
         onChange={onChange}
         placeholder="Password"
       />
-      <input type="submit" />
+      <input type="submit" className="submit-button"/>
     </form>
   );
 }

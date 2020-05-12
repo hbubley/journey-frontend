@@ -1,6 +1,7 @@
 $secondary-font-color: rgba(0, 0 , 0, 0.7);
 $main-font-color: rgba(255, 255, 220, 0.9);
 $hover-font-color: rgba(159, 210, 222, 0.8);
+$secondary-background-color: rgba(212, 173, 228, 0.5);
 $main-background-color: rgb(234, 238, 238);
 @mixin centered-flex-display{
   display: flex;
@@ -39,21 +40,6 @@ $main-background-color: rgb(234, 238, 238);
        animation: fadein 1s ease-in;
 }
 
-@mixin fade-out{
-  @keyframes fadeout {
-    from { opacity: 1; }
-    to   { opacity: 0; }
-  }
-  -webkit-animation: fadeout 2s ease-in;
-  -moz-animation: fadeout 2s ease-in;
-   -ms-animation: fadeout 2s ease-in;
-    -o-animation: fadeout 2s ease-in;
-       animation: fadeout 2s ease-in;
-}
-
-.fadeOut{
-  @include fade-out();
-}
 .fadeIn{
   @include fade-in()
 }
@@ -117,7 +103,7 @@ $main-background-color: rgb(234, 238, 238);
         font-size: 35px;
         text-shadow: none;
       }
-      button, .button{
+      button{
         margin-top: 15px;
         font-size: 50px;
         @include main-text();
@@ -128,7 +114,25 @@ $main-background-color: rgb(234, 238, 238);
         &:hover{
           color: $secondary-font-color;
           cursor: pointer;
-          transition: color, 2s;
+          transition: color, 1s;
+          text-shadow: 4px 4px #888888;
+          box-shadow: 0 0 5px 2px #888888;
+
+        }
+      }
+      .submit-button{
+        margin-top: 15px;
+        font-size: 50px;
+        @include main-text();
+        background:$secondary-background-color;
+        border-radius: 5px;
+        border: 0px;
+        box-shadow: 0 0 5px 1px #888888;
+        &:hover{
+          color: $secondary-font-color;
+          cursor: pointer;
+          background:rgba(212, 173, 228, 0.7);
+          transition: color,  1s;
           text-shadow: 4px 4px #888888;
           box-shadow: 0 0 5px 2px #888888;
         }

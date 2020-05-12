@@ -72,7 +72,7 @@ export default function Register({ toggleIsRegistering }) {
         onChange={onChange}
         placeholder="Password"
       />
-      <input className="btn" type="submit" />
+      <input type="submit" className="submit-button" />
     </form>
   </>
   );
