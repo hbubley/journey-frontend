@@ -33,7 +33,7 @@ const getSteps = async () => {
     console.log("IN CATCH ERROR GET ALL STEPS -", err.response)
     dispatch({
       type: STEP_ERROR,
-      payload: err.response.data.msg
+      payload: err.response.msg
     });
   }
 };

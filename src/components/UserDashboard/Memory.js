@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import StepContext from '../../context/user-steps/stepContext'
+import AuthContext from '../../context/auth/authContext'
 
 export default function Memory() {
     const stepContext = useContext(StepContext);
@@ -19,8 +20,8 @@ export default function Memory() {
     }
     return (
         <div className='memory-container'>
-            {steps !== null && !loading ? (
-            <h1>Remember when you were so proud of yourself for...{randomProud.proud_moment}</h1>
+            {/* {steps !== null && !loading ? (
+            <h1>Remember when you were so proud of yourself for...{randomProud.proud_moment}</h1> */}
             ) : <h1>Loading</h1>}
         </div>
         
