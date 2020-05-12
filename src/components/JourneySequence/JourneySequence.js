@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import Breathe from "./Breathe";
 import Input from "./Input";
 import prompts from "./prompts.json";
@@ -16,8 +17,9 @@ export default function JourneySequence() {
     proud_moment: "",
     freespace: "",
   });
+  let history = useHistory();
 
-  //   const { feeling_now, thoughts, good_thing, proud_moment, freespace } = step;
+  
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -38,6 +40,7 @@ export default function JourneySequence() {
       proud_moment: "",
       freespace: "",
     });
+    history.push("/userdash"); 
   };
 
   const _next = () => {

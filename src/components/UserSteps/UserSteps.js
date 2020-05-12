@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import StepContext from "../../context/user-steps/stepContext";
+import UserStep from './UserStep'
 import './Steps.scss'
 export default function Steps() {
   const stepContext = useContext(StepContext);
@@ -13,10 +14,7 @@ export default function Steps() {
     <div className='steps-container'>
       {steps.map((step) => 
       (
-        <>
-        <h1>{step.date}</h1>
-        <h3>{step.feeling_now}</h3>
-        </>
+          <UserStep step={step} key={step._id}/>
       ))}
     </div>
   );

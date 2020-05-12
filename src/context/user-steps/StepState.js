@@ -16,7 +16,7 @@ const StepState = (props) => {
   const initialState = {
     //Fakies for now ;)
     allSteps: [],
-
+    loading: true,
     steps: [],
     current: null,
     error: null
@@ -25,16 +25,17 @@ const StepState = (props) => {
 
 //Get all steps
 const getSteps = async () => {
+
   try {
     const res = await axios.get("http://intense-basin-33436.herokuapp.com/api/entries");
     dispatch({
       type: GET_STEPS,
-      payload: res.data,
+      payload: res.data
     });
   } catch (err) {
     dispatch({
       type: STEP_ERROR,
-      payload: err.response.msg,
+      payload: err.response.msg
     });
   }
 };
@@ -50,12 +51,12 @@ const getSteps = async () => {
       const res = await axios.post("http://intense-basin-33436.herokuapp.com/api/entries", entry, config);
       dispatch({
         type: ADD_STEP,
-        payload: res.data,
+        payload: res.data
       });
     } catch (err) {
       dispatch({
         type: STEP_ERROR,
-        payload: err.response.msg,
+        payload: err.response.msg
       });
     }
   };

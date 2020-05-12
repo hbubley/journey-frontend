@@ -41,7 +41,17 @@ $main-background-color: #EAEEEE;
 
 .steps-container{
     @include desktop-size();
+    @include centered-flex-display();
     background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589127413/Small_backgrounds_icons_Journey_App_-_Desktop_vtzuz4.png');
     background-size: contain;
     background-repeat: no-repeat;
+    .step-container{
+      @include centered-flex-display();
+      flex-direction: column;
+      h1, h2, p{
+        margin: 0;
+        padding: 0;
+        @include main-text();
+      }
+    }
 }

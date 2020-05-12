@@ -165,6 +165,10 @@ $main-background-color: rgb(234, 238, 238);
     min-width: 80vw;
     background-position: center;
     background-size: contain;
-     background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    h1, h2{
+      @include main-text();
+      font-size: 40px;
+    }
   }
 }
