@@ -16,8 +16,8 @@ $main-background-color: #EAEEEE;
 }
 
 @mixin desktop-size{
-  min-width: 850px;
-  min-height: 900px;
+  max-width: 1000px;
+  max-height: 1000px;
 }
 @mixin input-style-desktop{
   font-family: 'Nanum Brush Script', cursive;
@@ -32,22 +32,26 @@ $main-background-color: #EAEEEE;
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-  -webkit-animation: fadein 2s ease-in;
-  -moz-animation: fadein 2s ease-in;
-   -ms-animation: fadein 2s ease-in;
-    -o-animation: fadein 2s ease-in;
-       animation: fadein 2s ease-in;
+  -webkit-animation: fadein 1s ease-in;
+  -moz-animation: fadein 1s ease-in;
+   -ms-animation: fadein 1s ease-in;
+    -o-animation: fadein 1s ease-in;
+       animation: fadein 1s ease-in;
 }
 
 .steps-container{
     @include desktop-size();
-    @include centered-flex-display();
-    background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589127413/Small_backgrounds_icons_Journey_App_-_Desktop_vtzuz4.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    @include desktop-size();
+    flex-wrap: wrap;
+    overflow-y: scroll;
     .step-container{
       @include centered-flex-display();
+      margin: 10px;
       flex-direction: column;
+      border: black solid;
+      width: 300px;
       h1, h2, p{
         margin: 0;
         padding: 0;
