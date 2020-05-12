@@ -13,6 +13,7 @@ export default function UserDashboard() {
   useEffect(() => {
     getSteps();
   }, []);
+  
 
   return (
     <div className="dashboard-container">

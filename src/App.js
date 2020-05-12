@@ -10,11 +10,11 @@ import AlertState from "./context/alert/AlertState";
 import setAuthToken from './utils/setAuthToken'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-function App() {
-  if(localStorage.token) {
-    setAuthToken(localStorage.token);
-  }
-  
+if(localStorage.token) {
+  setAuthToken(localStorage.token);
+}
+
+function App() {  
   return (
     <AuthState>
       <StepState>

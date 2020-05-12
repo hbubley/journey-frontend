@@ -4,10 +4,7 @@ import UserStep from './UserStep'
 import './Steps.scss'
 export default function Steps() {
   const stepContext = useContext(StepContext);
-  const { steps, getSteps, loading } = stepContext;
-  useEffect(() => {
-    getSteps()
-  }, [])
+  const { steps, loading } = stepContext;
 
   if(steps !== null && steps.length === 0 && !loading){
     return <h1>When you take steps you will see them here</h1>
