@@ -160,6 +160,8 @@ $main-background-color: rgb(234, 238, 238);
     }
   }
   .submit-container{
+    @include centered-flex-display();
+    flex-direction: column;
     background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589170303/Images_-_Journey_App_-_Desktop_2_cxd3wm.png');
     min-height: 80vh;
     min-width: 80vw;
