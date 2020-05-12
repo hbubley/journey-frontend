@@ -72,7 +72,7 @@ const AuthState = (props) => {
     };
     try {
       const res = await axios.post(
-        "http://intense-basin-33436.herokuapp.com/api/auth",
+        "https://intense-basin-33436.herokuapp.com/api/auth",
         formData,
         config
       );
