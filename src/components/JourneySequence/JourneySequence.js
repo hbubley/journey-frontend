@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Breathe from "./Breathe";
 import Input from "./Input";
 import prompts from "./prompts.json";
@@ -121,6 +121,7 @@ export default function JourneySequence() {
 
   return (
     <div className="sequence-container">
+      <Link to='/userdash' className='dash-link'>Back to Dash</Link>
       <form onSubmit={handleSubmit}>{renderStep(sequenceIndex)}</form>
       <div className="sequence-buttons">
         <button hidden={sequenceIndex === 7} onClick={_next}>Next</button>

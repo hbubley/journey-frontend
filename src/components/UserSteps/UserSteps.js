@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import StepContext from "../../context/user-steps/stepContext";
+import { Link } from "react-router-dom";
 import UserStep from './UserStep'
 import './Steps.scss'
 export default function Steps() {
@@ -12,6 +13,7 @@ export default function Steps() {
 
   return (
     <div className='steps-container'>
+      <Link to='/userdash' className='dash-link'>Back to Dash</Link>
       {steps !== null && !loading ? (
       <>
       {steps.map((step) => 

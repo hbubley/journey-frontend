@@ -1,4 +1,5 @@
 import React from "react";
+import Nav from './components/Nav'
 import WelcomeDisplay from "./components/LandingPage/WelcomeDisplay";
 import About from "./components/LandingPage/About";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
