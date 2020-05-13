@@ -1,6 +1,9 @@
 $hover-font-color: rgba(0, 0 , 0, 0.7);
 $main-font-color: rgba(95, 95, 95, 0.6);
 $main-background-color: rgb(237, 234, 238);
+$mobile-break: 425px;
+$tablet-break: 768px;
+
 @mixin centered-flex-display{
   display: flex;
   justify-content: center;
@@ -37,7 +40,22 @@ $main-background-color: rgb(237, 234, 238);
     'start start memory'
     'start start stepcount'
     'start start allstepslink';
+    @media screen and (max-width: $mobile-break) {
+       @include centered-flex-display();
+        flex-direction: column;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    @media screen and (max-width: $tablet-break) {
+        grid-template-areas: 
+        'welcome welcome'
+        'start start'
+        'stepcount allstepslink';
+    }
     .memory-container{
+        @media screen and (max-width: $tablet-break) {
+            display: none;
+          }
         @include fade-in();
         grid-area: memory;
         background: url("https://res.cloudinary.com/dum4u7sro/image/upload/v1589074172/icons_Journey_App_-_Desktop_6_ginfb5.png");
@@ -70,10 +88,25 @@ $main-background-color: rgb(237, 234, 238);
             width: 400px;
             text-align: center;
             color: rgb(255, 255, 255);
+            @media screen and (max-width: $mobile-break) {
+                width: 300px;
+                font-size: 35px;
+              }
+            @media screen and (max-width: $tablet-break) {
+                width: 300px;
+                font-size: 30px;
+              }
+            
         }
         span{
             color: $hover-font-color;
             font-size: 46px;
+            @media screen and (max-width: $mobile-break) {
+                font-size: 40px;
+              }
+              @media screen and (max-width: $tablet-break) {
+                font-size: 30px;
+              }
         }
     }
     .all-steps-link{
@@ -86,6 +119,9 @@ $main-background-color: rgb(237, 234, 238);
         background-size: contain;
         background-repeat: no-repeat;
         width: 400px;
+        @media screen and (max-width: $tablet-break) {
+            width: 300px;
+          }
         h1{
             @include fade-in();
             @include main-text();
@@ -93,6 +129,7 @@ $main-background-color: rgb(237, 234, 238);
             width: 400px;
             text-align: center;
             color: rgb(255, 243, 234);
+
             &:hover{
                 color: $hover-font-color;
                 cursor: pointer;
@@ -109,6 +146,13 @@ $main-background-color: rgb(237, 234, 238);
         color: $main-font-color;
         margin: 10px;
         font-size: 65px;
+        @media screen and (max-width: $mobile-break) {
+            font-size: 35px;
+            text-align: center;
+          }
+          @media screen and (max-width: $tablet-break) {
+            font-size: 45px;
+          }
         }
     }
     .start-link{
@@ -122,11 +166,21 @@ $main-background-color: rgb(237, 234, 238);
         @include centered-flex-display();
         height: 500px;
         margin-top: 20px;
+        @media screen and (max-width: $tablet-break) {
+            height: 400px;
+            
+          }
         h1{
             @include main-text();
             font-size: 70px;
             text-align: center;
             color: rgba(255, 255, 255, 1);
+            @media screen and (max-width: $mobile-break) {
+                font-size: 80px;
+              }
+              @media screen and (max-width: $tablet-break) {
+                font-size: 100px;
+              }
             &:hover{
                 color: $hover-font-color;
                 cursor: pointer;

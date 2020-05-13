@@ -17,7 +17,7 @@ $hover-background-color: rgba(255, 255, 238, 0.8);
   text-shadow: 1px 1px 4px #0f0f0f;
 }
 
-@mixin desktop-welcome-size{
+@mixin welcome-size{
   min-width: 600px;
   min-height: 600px;
 }
@@ -54,23 +54,20 @@ $hover-background-color: rgba(255, 255, 238, 0.8);
 
 .welcome-container{
     @include centered-flex-display();
-    min-width: 600px;
-    min-height: 600px;
+    @include welcome-size();
     background-image: url("https://res.cloudinary.com/dum4u7sro/image/upload/v1588986601/icons_Journey_App_-_Desktop_hw04lx.png");
     background-size: contain;
     background-repeat: no-repeat;
     .welcome-initial-content{
       @include centered-flex-display();
       @include fade-in();
+      @include welcome-size();
       flex-direction: column;
-      min-width: 600px;
-      min-height: 600px;
       h1{
         @include main-text();
         font-size: 110px;
         margin: 0;
         padding: 0;
-        
       }
       button{
         @include main-text();
@@ -89,7 +86,7 @@ $hover-background-color: rgba(255, 255, 238, 0.8);
     }  
     .login-container, .register-container{
       @include fade-in();
-      @include desktop-welcome-size();
+      @include welcome-size();
       @include centered-flex-display(); 
       flex-direction: column;
       h1{
@@ -120,7 +117,6 @@ $hover-background-color: rgba(255, 255, 238, 0.8);
           transition: color, 1s;
           text-shadow: 2px 2px 4px #888888;
           box-shadow: 0 0 5px 2px #888888;
-
         }
       }
       .submit-button{
