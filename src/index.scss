@@ -2,6 +2,8 @@ $secondary-font-color: rgba(0, 0 , 0, 0.7);
 $main-font-color: rgba(255, 255, 220, 0.9);
 $hover-font-color: rgba(159, 210, 222, 0.8);
 $main-background-color: rgb(234, 238, 238);
+$secondary-background-color: rgba(159, 210, 222, 0.6);
+$hover-background-color: rgba(255, 255, 238, 0.8);
 @mixin centered-flex-display{
   display: flex;
   justify-content: center;
@@ -85,10 +87,21 @@ code {
     align-items: center;
     margin-bottom: 5px;
     .item{
-      color: $secondary-font-color;
-      background-color: rgba(212, 218, 255, 0.7);
+      margin-top: 15px;
+      font-size: 50px;
+      @include main-text();
+      background: $secondary-background-color;
       border-radius: 5px;
-      padding: 10px;
+      border: 0px;
+      box-shadow: 0 0 5px 1px #888888;
+      &:hover{
+        color: $secondary-font-color;
+        cursor: pointer;
+        background: $hover-background-color;
+        transition: color,  1s;
+        text-shadow: 2px 2px 4px #888888;
+        box-shadow: 0 0 5px 2px #888888;
+      }
     }
   }
 }
