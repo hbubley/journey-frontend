@@ -55,12 +55,26 @@ const getSteps = async () => {
       console.log("IN CATCH ERROR ADD STEP -", err.response)
       dispatch({
         type: STEP_ERROR,
-        payload: err.response.msg,
+        payload: err.response.msg
       });
     }
   };
   //Delete step entry
+  const deleteStep = async id => {
+    try {
+      await axios.delete(`https://intense-basin-33436.herokuapp.com/api/entries/${id}`);
 
+      dispatch({
+        type: DELETE_STEP,
+        payload: id
+      });
+    } catch (err) {
+      dispatch({
+        type: STEP_ERROR,
+        payload: err.response.msg
+      });
+    }
+  };
   //set current entry
 
   //clear current entry
@@ -69,8 +83,8 @@ const getSteps = async () => {
     <StepContext.Provider
       value={{
         steps: state.steps,
-        addStep,
         error: state.error,
+        addStep,
         getSteps
       }}
     >
