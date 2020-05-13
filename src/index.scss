@@ -4,6 +4,7 @@ $hover-font-color: rgba(159, 210, 222, 0.8);
 $main-background-color: rgb(234, 238, 238);
 $secondary-background-color: rgba(204, 159, 222, 0.6);
 $hover-background-color: rgba(255, 255, 238, 0.8);
+$mobile-break: 425px;
 @mixin centered-flex-display{
   display: flex;
   justify-content: center;
@@ -65,6 +66,7 @@ body{
   background-image: url("https://res.cloudinary.com/dum4u7sro/image/upload/v1588987617/Copy_of_Copy_of_Images_-_Journey_App_-_Desktop_rs29uw.png");
   background-size: cover;
   animation: parallax_bg 45s linear infinite alternate-reverse both;
+  overflow: scroll;
 }
 
 code {
@@ -88,6 +90,10 @@ code {
     align-items: center;
     margin-bottom: 5px;
     bottom: 5px;
+    @media screen and (max-width: $mobile-break) {
+      position: static;
+      
+    }
     .item{
       margin-top: 15px;
       font-size: 50px;
