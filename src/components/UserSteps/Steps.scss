@@ -1,7 +1,7 @@
-$secondary-font-color: rgba(0, 0 , 0, 0.7);
-$main-font-color: rgba(255, 255, 220, 0.9);
+$secondary-font-color: rgba(41, 40, 40, 0.7);
+$main-font-color: rgba(255, 255, 255, 0.9);
 $hover-font-color: rgba(159, 210, 222, 0.8);
-$main-background-color: #EAEEEE;
+$main-background-color: rgba(202, 187, 238, 0.7);
 @mixin centered-flex-display{
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@ $main-background-color: #EAEEEE;
   color: $main-font-color;
   font-family: 'Nanum Brush Script', cursive;
   letter-spacing: 3px;
-  text-shadow: 2px 2px 4px #1f1f1f;
+  text-shadow: 1px 1px 3px #1f1f1f;
 }
 
 @mixin desktop-size{
@@ -47,15 +47,21 @@ $main-background-color: #EAEEEE;
     flex-wrap: wrap;
     overflow-y: scroll;
     .step-container{
-      @include centered-flex-display();
+      text-align: left;
       margin: 10px;
       flex-direction: column;
-      border: black solid;
+      background: $main-background-color;
+      border-radius: 5px;
       width: 300px;
+      padding: 10px;
       h1, h2, p{
+        color: $main-font-color;
         margin: 0;
         padding: 0;
         @include main-text();
+      }
+      span{
+        color: $secondary-font-color;
       }
     }
 }
