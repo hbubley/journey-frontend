@@ -22,10 +22,10 @@ const Navbar = ({ title }) => {
 
   const authLinks = (
     <>
-        <a onClick={onLogout} href='/'>
+        <a className="item" onClick={onLogout} href='/'>
           <span className='logout-span'>Logout</span>
         </a>
-        <Link to='/userdash'>Dashboard</Link>
+        <Link className="item" to='/userdash'>Dashboard</Link>
     </>
   );
 

@@ -78,11 +78,18 @@ code {
   nav{
     @include main-text();
     font-size: 30px;
-    width: 60vw;
+    width: 50vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 5px;
+    .item{
+      color: $secondary-font-color;
+      background-color: rgba(212, 218, 255, 0.7);
+      border-radius: 5px;
+      padding: 10px;
+    }
   }
 }
 
