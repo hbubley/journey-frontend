@@ -13,7 +13,6 @@ export default function Steps() {
 
   return (
     <div className='steps-container'>
-      <Link to='/userdash' className='dash-link'>Back to Dash</Link>
       {steps !== null && !loading ? (
       <>
       {steps.map((step) => 

@@ -70,9 +70,25 @@ code {
     monospace;
 }
 
-.dash-link{
-  @include main-text();
-  position: absolute;
-  top: 10%;
-  left: 10%;
+.nav-container{
+  margin: 0 auto;
+  width: 0vw;
+  @include centered-flex-display();
+  flex-direction: column;
+  nav{
+    @include main-text();
+    font-size: 30px;
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
+
+// .dash-link{
+//   @include main-text();
+//   position: absolute;
+//   top: 10%;
+//   left: 10%;
+// }

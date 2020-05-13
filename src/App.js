@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from './components/Nav'
+import Navbar from './components/Navbar'
 import WelcomeDisplay from "./components/LandingPage/WelcomeDisplay";
 import About from "./components/LandingPage/About";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
@@ -22,6 +22,7 @@ function App() {
         <AlertState>
           <Router>
             <div className="App">
+            <Navbar />
               <Switch>
                 <Route exact path="/" component={WelcomeDisplay} />
                 <Route path="/about" component={About} />
