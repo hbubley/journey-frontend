@@ -1,7 +1,7 @@
 //Move all heights and widths here with media quueries and variables
 $secondary-font-color: rgba(100, 100, 100, 0.4);
 $main-font-color: rgba(255, 255, 220, 0.9);
-$hover-font-color: rgba(159, 210, 222, 0.8);
+$hover-font-color: rgba(159, 210, 222, 0.7);
 $main-background-color: rgb(234, 238, 238);
 $mobile-break: 425px;
 $tablet-break: 768px;
@@ -41,7 +41,7 @@ $tablet-break: 768px;
 @mixin input-style-desktop {
   font-family: 'Nanum Brush Script', cursive;
   letter-spacing: 3px;
-  background: $main-background-color;
+  background-color: $hover-font-color;
   border-radius: 5px;
   padding: 5px;
   margin: 5px;
@@ -123,7 +123,6 @@ $tablet-break: 768px;
     .input-container{
       @include fade-in('1.5s');
       @include centered-flex-display();
-      background-image: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589152906/Untitled_design_hlouno.png');
       height: 400px;
       width: 900px;
       background-position: center;
@@ -133,11 +132,10 @@ $tablet-break: 768px;
         height: 250px;
         width: 300px;
       }
-      input{
+      textarea{
         //need to line break in here and make font bigger!!
         @include main-text();
-        background: none;
-        border: none;
+        @include input-style-desktop();
         font-size: 30px;
         height: 200px;
         width: 700px;
@@ -186,7 +184,7 @@ $tablet-break: 768px;
       @include main-text();
       font-size: 40px;
       @media screen and (max-width: $mobile-break){
-        align-text: center;
+        text-align: center;
       }
     }
   }

@@ -8,7 +8,7 @@ export default function Input({ prompts, handleChange, value }) {
     <div className="prompts">
       <h1>{prompts.question}</h1>
       <div className="input-container">
-        <input
+        <textarea
           id={prompts.input_key}
           name={prompts.input_key}
           type="text"
