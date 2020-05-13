@@ -1,8 +1,9 @@
 $secondary-font-color: rgba(0, 0 , 0, 0.7);
 $main-font-color: rgba(255, 255, 220, 0.9);
 $hover-font-color: rgba(159, 210, 222, 0.8);
-$secondary-background-color: rgba(212, 173, 228, 0.5);
+$secondary-background-color: rgba(159, 210, 222, 0.6);
 $main-background-color: rgb(234, 238, 238);
+$hover-background-color: rgba(255, 255, 238, 0.8);
 @mixin centered-flex-display{
   display: flex;
   justify-content: center;
@@ -13,7 +14,7 @@ $main-background-color: rgb(234, 238, 238);
   color: $main-font-color;
   font-family: 'Nanum Brush Script', cursive;
   letter-spacing: 3px;
-  text-shadow: 2px 2px #4d4c4c;
+  text-shadow: 1px 1px 4px #0f0f0f;
 }
 
 @mixin desktop-welcome-size{
@@ -82,7 +83,7 @@ $main-background-color: rgb(234, 238, 238);
           color: $hover-font-color;
           cursor: pointer;
           transition: color, 1s;
-          text-shadow: 4px 4px #888888;
+          text-shadow: 2px 2px 4px #3d3d3d;
         }
       }
     }  
@@ -93,7 +94,7 @@ $main-background-color: rgb(234, 238, 238);
       flex-direction: column;
       h1{
         @include main-text();
-        font-size: 40px;
+        font-size: 45px;
         margin-bottom: 15px;
         padding: 0;
       }
@@ -101,7 +102,8 @@ $main-background-color: rgb(234, 238, 238);
         @include input-style-desktop();
         @include main-text();
         font-size: 35px;
-        text-shadow: none;
+        text-shadow: 1px 1px 2px #888888;
+        color: $secondary-font-color;
       }
       button{
         margin-top: 15px;
@@ -113,9 +115,10 @@ $main-background-color: rgb(234, 238, 238);
         box-shadow: 0 0 5px 1px #888888;
         &:hover{
           color: $secondary-font-color;
+          background: $hover-background-color;
           cursor: pointer;
           transition: color, 1s;
-          text-shadow: 4px 4px #888888;
+          text-shadow: 2px 2px 4px #888888;
           box-shadow: 0 0 5px 2px #888888;
 
         }
@@ -131,9 +134,9 @@ $main-background-color: rgb(234, 238, 238);
         &:hover{
           color: $secondary-font-color;
           cursor: pointer;
-          background:rgba(212, 173, 228, 0.7);
+          background: $hover-background-color;
           transition: color,  1s;
-          text-shadow: 4px 4px #888888;
+          text-shadow: 2px 2px 4px #888888;
           box-shadow: 0 0 5px 2px #888888;
         }
       }
