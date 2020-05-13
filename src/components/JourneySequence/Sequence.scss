@@ -3,6 +3,9 @@ $secondary-font-color: rgba(100, 100, 100, 0.4);
 $main-font-color: rgba(255, 255, 220, 0.9);
 $hover-font-color: rgba(159, 210, 222, 0.8);
 $main-background-color: rgb(234, 238, 238);
+$mobile-break: 425px;
+$tablet-break: 768px;
+
 @mixin fade-in($waitTime) {
   animation: 
     wait #{$waitTime},
@@ -46,7 +49,6 @@ $main-background-color: rgb(234, 238, 238);
 
 
 @keyframes breathing {
-
   0%,
   10% {
     -webkit-transform: scale(0.4);
@@ -78,6 +80,10 @@ $main-background-color: rgb(234, 238, 238);
       color: $secondary-font-color;
       font-size: 70px;
       margin: 0;
+      @media screen and (max-width: $mobile-break){
+        font-size: 30px;
+        text-align: center;
+      }
     }
     h2{
       @include main-text();
@@ -86,17 +92,34 @@ $main-background-color: rgb(234, 238, 238);
       font-size: 50px;
       margin: 0;
       padding-bottom: 20px;
+      @media screen and (max-width: $mobile-break){
+        font-size: 20px;
+        text-align: center;
+      }
     }
     flex-direction: column;
     .breathing-container {
-      @include fade-in('4s');
+      @include fade-in('2s');
       background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589129729/icons_Journey_App_-_Desktop_9_yxouzp.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      @media screen and (max-width: $mobile-break){
+        @include centered-flex-display();
+      }
+      @media screen and (max-width: $mobile-break){
+        height: 200px;
+        width: 200px;
+      }
       img {
-        animation: breathing 7s linear infinite alternate-reverse
+        animation: breathing 7s linear infinite alternate-reverse;
+        @media screen and (max-width: $mobile-break){
+          height: 200px;
+          width: 200px;
+        }
       }
     }
     .input-container{
-      @include fade-in('2s');
+      @include fade-in('1.5s');
       @include centered-flex-display();
       background-image: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589152906/Untitled_design_hlouno.png');
       height: 400px;
@@ -104,6 +127,10 @@ $main-background-color: rgb(234, 238, 238);
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
+      @media screen and (max-width: $mobile-break){
+        height: 250px;
+        width: 300px;
+      }
       input{
         //need to line break in here and make font bigger!!
         @include main-text();
@@ -112,27 +139,9 @@ $main-background-color: rgb(234, 238, 238);
         font-size: 30px;
         height: 200px;
         width: 700px;
-      }
-    }
-    .sequence-buttons {
-      min-width: 60vw;
-      display: flex;
-      justify-content: flex-end; 
-      @include fade-in('5s');
-      button {
-        margin-top: 15px;
-        font-size: 50px;
-        @include main-text();
-        background: rgba(255, 238, 181, 0.52);
-        border-radius: 5px;
-        border: 0px;
-        box-shadow: 0 0 5px 1px #888888;
-        &:hover {
-          color: $secondary-font-color;
-          cursor: pointer;
-          transition: color, 2s;
-          text-shadow: 4px 4px #888888;
-          box-shadow: 0 0 5px 2px #888888;
+        @media screen and (max-width: $mobile-break){
+          height: 250px;
+          width: 280px;
         }
       }
     }
@@ -142,6 +151,9 @@ $main-background-color: rgb(234, 238, 238);
     display: flex;
     justify-content: flex-end; 
     @include fade-in('5s');
+    @media screen and (max-width: $mobile-break){
+      justify-content: center;
+    }
     button {
       margin-top: 15px;
       font-size: 50px;
