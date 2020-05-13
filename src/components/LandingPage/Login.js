@@ -45,8 +45,7 @@ export default function Login({toggleIsLoggingIn}) {
 
   return (
     <form className="login-container" onSubmit={onSubmit}>
-      <button onClick={() => toggleIsLoggingIn()} className="back-button">Back</button>
-      <h1>It's nice to see you again</h1>
+      <h1>Nice to see you again</h1>
       <Alerts />
       <input
         type="text"
@@ -65,6 +64,7 @@ export default function Login({toggleIsLoggingIn}) {
         placeholder="Password"
       />
       <input type="submit" className="submit-button"/>
+      <button onClick={() => toggleIsLoggingIn()} className="back-button">Back</button>
     </form>
   );
 }

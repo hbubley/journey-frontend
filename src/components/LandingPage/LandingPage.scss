@@ -4,22 +4,32 @@ $hover-font-color: rgba(159, 210, 222, 0.8);
 $secondary-background-color: rgba(159, 210, 222, 0.6);
 $main-background-color: rgb(234, 238, 238);
 $hover-background-color: rgba(255, 255, 238, 0.8);
+$mobile-break: 425px;
+$tablet-break: 768px;
+
+
 @mixin centered-flex-display{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 @mixin main-text{
   color: $main-font-color;
   font-family: 'Nanum Brush Script', cursive;
   letter-spacing: 3px;
   text-shadow: 1px 1px 4px #0f0f0f;
 }
-
 @mixin welcome-size{
   min-width: 600px;
   min-height: 600px;
+  @media screen and (max-width: $mobile-break) {
+    max-width: 600px;
+    max-height: 600px;
+  }
+  @media screen and (max-width: $tablet-break) {
+    max-width: 600px;
+    max-height: 600px;
+  }
 }
 @mixin input-style-desktop{
   font-family: 'Nanum Brush Script', cursive;
@@ -76,6 +86,9 @@ $hover-background-color: rgba(255, 255, 238, 0.8);
         margin: 0;
         background: none;
         border: none;
+        @media screen and (max-width: $mobile-break) {
+          font-size: 60px;
+        }
         &:hover{
           color: $hover-font-color;
           cursor: pointer;
@@ -94,6 +107,9 @@ $hover-background-color: rgba(255, 255, 238, 0.8);
         font-size: 45px;
         margin-bottom: 15px;
         padding: 0;
+        @media screen and (max-width: $mobile-break) {
+          font-size: 35px;
+        }
       }
       input{
         @include input-style-desktop();

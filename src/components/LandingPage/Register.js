@@ -48,8 +48,7 @@ export default function Register({ toggleIsRegistering }) {
   return (
     <>
     <form className="register-container" onSubmit={onSubmit}>
-    <button onClick={() => toggleIsRegistering()} className="back-button">Back</button>
-      <h1>It's nice to meet you</h1>
+      <h1>Nice to meet you</h1>
       <Alerts />
       <input
         type="text"
@@ -73,6 +72,7 @@ export default function Register({ toggleIsRegistering }) {
         placeholder="Password"
       />
       <input type="submit" className="submit-button" />
+      <button onClick={() => toggleIsRegistering()} className="back-button">Back</button>
     </form>
   </>
   );
