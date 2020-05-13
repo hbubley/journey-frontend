@@ -103,15 +103,17 @@ $tablet-break: 768px;
       background: url('https://res.cloudinary.com/dum4u7sro/image/upload/v1589129729/icons_Journey_App_-_Desktop_9_yxouzp.png');
       background-size: contain;
       background-repeat: no-repeat;
+      height: 500px;
+      width: 500px;
       @media screen and (max-width: $mobile-break){
         @include centered-flex-display();
-      }
-      @media screen and (max-width: $mobile-break){
         height: 200px;
         width: 200px;
       }
       img {
         animation: breathing 7s linear infinite alternate-reverse;
+        height: 500px;
+      width: 500px;
         @media screen and (max-width: $mobile-break){
           height: 200px;
           width: 200px;
@@ -183,6 +185,9 @@ $tablet-break: 768px;
     h1, h2{
       @include main-text();
       font-size: 40px;
+      @media screen and (max-width: $mobile-break){
+        align-text: center;
+      }
     }
   }
 }
