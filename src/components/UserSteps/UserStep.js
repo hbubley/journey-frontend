@@ -18,7 +18,10 @@ export default function Step({ step }) {
           <span>Good thing:</span> {step.good_thing ? step.good_thing : "Empty"}
         </h1>
         <h1>
-          <span>Proud moment:</span> {step.feeling_now ? step.feeling_now : "Empty"}
+          <span>Proud moment:</span> {step.proud_moment ? step.proud_moment : "Empty"}
+        </h1>
+        <h1>
+          <span>Free Space:</span> {step.freespace ? step.freespace : "Empty"}
         </h1>
       </div>
     );
