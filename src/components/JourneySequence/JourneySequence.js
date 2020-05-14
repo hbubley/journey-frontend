@@ -121,7 +121,6 @@ export default function JourneySequence() {
 
   return (
     <div className="sequence-container">
-      <Link to='/userdash' className='dash-link'>Back to Dash</Link>
       <form onSubmit={handleSubmit}>{renderStep(sequenceIndex)}</form>
       <div className="sequence-buttons">
         <button hidden={sequenceIndex === 7} onClick={_next}>Next</button>
