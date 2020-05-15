@@ -39,8 +39,8 @@ $tablet-break: 768px;
   justify-items: center;
   padding: 10px;
   display: grid;
-  width: 90vw;
-  height: 100vh;
+  min-width: 90vw;
+  min-height: 100vh;
   background: rgba(234, 238, 238, 0.8);
   border-radius: 20px;
   grid-template-areas:
@@ -53,7 +53,7 @@ $tablet-break: 768px;
     flex-direction: column;
     background-size: contain;
     background-repeat: no-repeat;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 
   @media screen and (max-width: $tablet-break) {

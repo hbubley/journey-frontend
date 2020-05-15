@@ -27,7 +27,6 @@ const AuthState = (props) => {
   // Load User
   const loadUser = async () => {
       setAuthToken(localStorage.token);
-    
     try {
       const res = await axios.get(
         "https://intense-basin-33436.herokuapp.com/api/auth"
